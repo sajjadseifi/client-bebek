@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/client-bebek/static/css/main.0596302b.css",
+    "main.js": "/client-bebek/static/js/main.2274acd9.js",
+    "static/js/787.9cea2013.chunk.js": "/client-bebek/static/js/787.9cea2013.chunk.js",
+    "static/media/JetBrainsMono-VariableFont_wght.ttf": "/client-bebek/static/media/JetBrainsMono-VariableFont_wght.ebc33bd57e78956d75ad.ttf",
+    "static/media/nasim.ttf": "/client-bebek/static/media/nasim.016f855602e88b200ce7.ttf",
+    "static/media/B Roya.ttf": "/client-bebek/static/media/B Roya.785a52ba22c51628b571.ttf",
+    "static/media/Yekan.ttf": "/client-bebek/static/media/Yekan.a63119cb654a1c836760.ttf",
+    "static/media/Mj flow.ttf": "/client-bebek/static/media/Mj flow.e6f1a08e7ff3665ca5a4.ttf",
+    "static/media/logo.jpg": "/client-bebek/static/media/logo.d2cf8096c017494b0680.jpg",
+    "index.html": "/client-bebek/index.html",
+    "main.0596302b.css.map": "/client-bebek/static/css/main.0596302b.css.map",
+    "main.2274acd9.js.map": "/client-bebek/static/js/main.2274acd9.js.map",
+    "787.9cea2013.chunk.js.map": "/client-bebek/static/js/787.9cea2013.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0596302b.css",
+    "static/js/main.2274acd9.js"
+  ]
+}
