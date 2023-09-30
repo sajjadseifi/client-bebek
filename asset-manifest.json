@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/client-bebek/static/css/main.0596302b.css",
-    "main.js": "/client-bebek/static/js/main.2274acd9.js",
+    "main.js": "/client-bebek/static/js/main.758cb17e.js",
     "static/js/787.9cea2013.chunk.js": "/client-bebek/static/js/787.9cea2013.chunk.js",
     "static/media/JetBrainsMono-VariableFont_wght.ttf": "/client-bebek/static/media/JetBrainsMono-VariableFont_wght.ebc33bd57e78956d75ad.ttf",
     "static/media/nasim.ttf": "/client-bebek/static/media/nasim.016f855602e88b200ce7.ttf",
@@ -11,11 +11,11 @@
     "static/media/logo.jpg": "/client-bebek/static/media/logo.d2cf8096c017494b0680.jpg",
     "index.html": "/client-bebek/index.html",
     "main.0596302b.css.map": "/client-bebek/static/css/main.0596302b.css.map",
-    "main.2274acd9.js.map": "/client-bebek/static/js/main.2274acd9.js.map",
+    "main.758cb17e.js.map": "/client-bebek/static/js/main.758cb17e.js.map",
     "787.9cea2013.chunk.js.map": "/client-bebek/static/js/787.9cea2013.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0596302b.css",
-    "static/js/main.2274acd9.js"
+    "static/js/main.758cb17e.js"
   ]
 }
