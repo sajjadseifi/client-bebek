@@ -56,18 +56,23 @@ export const CategorySection = ({isLink=true,categoryId=null,onChange=(category)
    ))
    const slides = isLoading ? skeletonSlides: categoriesSlides
 
+   useEffect(()=> {
+
+      return () => {
+         setSelectedCategory(null)
+         onChange(null)
+      }
+   },[])
 
    useEffect(()=>{
       let  selectedCategory =  categories.find((c)=> `${c.id}` === `${categoryId}`)  
       selectedCategory = selectedCategory ?? categories[0]
             
       setSelectedCategory(selectedCategory)
+      onChange(selectedCategory)
 
    },[categories,categoryId])
 
-   useEffect(()=>{
-      onChange(selectedCategory)
-   },[selectedCategory])
 
    const onNextCategory = (position) => () => {
       let idx = categories.findIndex((c)=> `${c.id}` === `${categoryId}`) 

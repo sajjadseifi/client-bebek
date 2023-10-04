@@ -54,6 +54,10 @@ export const UpdateProductPage = () => {
       'title': product?.title,
       'discounted_price': +product?.discounted_price,
     })
+
+    return ()=>{
+      setDefaultValues({})
+    }
    },[data])
 
    return (

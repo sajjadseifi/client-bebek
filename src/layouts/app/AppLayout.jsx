@@ -4,7 +4,7 @@ import { Footer } from './Footer'
 
 export const AppLayout = ({children}) => {
   return (
-    <div className='flex flex-col	h-full  select-none' >
+    <div className='flex flex-col	  h-full select-none' >
         <Header/>
         {children}
         <Footer/>

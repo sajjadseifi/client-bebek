@@ -49,13 +49,13 @@ export const Login = () => {
     mutate(userLogin);
   });
   return (
-    <div className='h-full w-full flex flex-col items-center justify-center px-4'>
+    <div className='w-full   mx-4'>
       <div className='text-center space-y-1 '>
-         <h1 className='text-white text-4xl'>ورود</h1>
+         <h1 className='text-white text-4xl'> ورود به کافه</h1>
       </div>
       <div className='my-2'></div>
       <FormProvider {...methods}>
-        <form onSubmit={onSubmit} className='space-y-2 w-full' >
+        <form onSubmit={onSubmit} className='space-y-3 w-full' >
           <TextField  
                 type="text" 
                 lable='نام کاربری'  
@@ -68,7 +68,7 @@ export const Login = () => {
               icon={<FaKey/>}   
               name='password'
           />
-          <ButtonLoader disabled={isLoading}  title='ورود' loading={isLoading}/>
+          <ButtonLoader  disabled={isLoading}  title='ورود' loading={isLoading}/>
         </form>
       </FormProvider >
     </div>

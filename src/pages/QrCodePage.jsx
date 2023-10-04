@@ -38,8 +38,8 @@ export const QrCodePage = () => {
    }
 
   return (
-    <div className=' flex-1'  style={{margin:'5px auto', height: "auto", maxWidth: 360, width: "60%" }}>
-         <div  className='flex justify-center' >
+    <div  className='h-full' >
+         <div  className='flex flex-col justify-center'  style={{margin:'5px auto',  maxWidth: 360, width: "60%" }}>
               <div className='mx-auto rounded border p-3 bg-white  box-border' ref={ref} id='qr-cde-box'>
                   <QRCode
                     size='100%'
@@ -54,19 +54,15 @@ export const QrCodePage = () => {
                       Coffe Bebek
                     </h1>
                 </div>
+                <IconButton 
+                  onClick={saveCapture} 
+                  style={{width:'100%' ,textAlign :'center' }}
+                  title='دانلود عکس'  
+                  bgColor='bg-sky-100' 
+                  text='text-sky-700' 
+                  icon={<FcDownload/>} 
+               />
           </div>
-         <div>
-          <div className='w-full' >
-              <IconButton 
-                onClick={saveCapture} 
-                style={{width:'100%' ,textAlign :'center' }}
-                title='دانلود عکس'  
-                bgColor='bg-sky-100' 
-                text='text-sky-700' 
-                icon={<FcDownload/>} 
-              />
-          </div>
-         </div>
     </div>
   )
 }

@@ -12,7 +12,8 @@ export const create = async (data={})=> {
    formData.append('title',`${title}`)
    formData.append('description',`${description}`)
    formData.append('price',Number(price))
-   formData.append('thumbnail',thumbnail)
+
+   if(thumbnail) formData.append('thumbnail',thumbnail)
    formData.append('discounted_price',0)
    
    var config = {
@@ -36,8 +37,7 @@ export const update = async (data={})=> {
    formData.append('title',`${title}`)
    formData.append('description',`${description}`)
    formData.append('price',Number(price))
-   if(typeof(thumbnail) !== 'string')
-   formData.append('thumbnail',thumbnail)
+   if(typeof(thumbnail) !== 'string' && thumbnail) formData.append('thumbnail',thumbnail)
    formData.append('discounted_price',0)
    
    const config = {

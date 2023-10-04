@@ -22,14 +22,15 @@ export const ProductForm = ({
 }) => {
   const [category,setCategory] = useState()
   const methods = useForm( {defaultValues : {} , resolver: yupResolver(validationShema)}  )
-  const { handleSubmit, setValue } = methods
+  const { handleSubmit, setValue,watch } = methods
   const navigate = useNavigate()
 
 
    const { mutate, isLoading } = useMutation(api, {
-     onSuccess:()=>{
+     onSuccess:(data)=>{
         onSuccess()
-        const url =  `/menu` + category?.id ? `/${category.id}`:''
+        const categoryId = data?.Product?.category_id 
+        const url =  `/menu/${categoryId ?? ''}`
         navigate(url)
       }, 
    onError
@@ -38,16 +39,29 @@ export const ProductForm = ({
    const request = (d) => {
       const data = onFormatData(d)
       mutate(data)
-   }
+   }  
+
+   useEffect(()=>{
+
+    return ()=> {
+      setCategory(null)
+      setValue('categoryId',null)
+      const keys = Object.keys(defaultValues)
+      keys.map((key)=>setValue(key,null))
+    }
+   },[])
    
    useEffect(()=>{
-    setValue('categoryId',category?.id)
-   },[category,setValue])
+    if(category?.id) setValue('categoryId',category?.id)
+  },[category])
 
    useEffect(()=>{
        const keys = Object.keys(defaultValues)
        keys.map((key)=>defaultValues[key] && setValue(key,defaultValues[key]))
-   },[defaultValues])
+       
+      },[defaultValues])
+
+   const categoryId =   watch('categoryId')
    return (
    <FormProvider {...methods}>
    <form onSubmit={handleSubmit(request)}>
@@ -61,7 +75,7 @@ export const ProductForm = ({
               style={{display:'none'}}
           />
       </div>
-      <CategorySection  isLink={false} categoryId={category?.id} onChange={setCategory} />
+      <CategorySection  isLink={false} categoryId={categoryId} onChange={setCategory} />
      <ErrorMessage  name='categoryId'/>
      <div className='p-5 space-y-2'>
           <ImageFieldSqure 
