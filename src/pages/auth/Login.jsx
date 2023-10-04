@@ -9,6 +9,7 @@ import { useMutation } from 'react-query'
 import { useNavigate } from 'react-router'
 import { useAuthentication } from '../../core/context/auth.context'
 import { FormProvider, useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 export const Login = () => {
   const navigate = useNavigate()
@@ -19,13 +20,12 @@ export const Login = () => {
   const onLoginSuccess = (data) => {
     setToken(data.token)
     navigate('/')
-
+    toast.info('ورود کاربر با موفقیت انجام شد')
   }
 
   const { mutate, isLoading } = useMutation(authAPI.loginAccount, {
         onSuccess: onLoginSuccess,
-        onError: () => alert("login faild"),
-        onSettled: () => {}
+        onError: () =>     toast.error('ورود کاربر با خطا مواجه شد'),
   });
 
   const onSubmit = handleSubmit((data) => {

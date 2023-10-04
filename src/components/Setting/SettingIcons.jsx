@@ -41,15 +41,17 @@ export const SettingIcons = ({
 }
 const onClose = () => removeLastPage()
 
+const onLoadHandler = () => isLoading || !isIdle
  const onOpenModal = () => {
   const { description,title}  = modal
   addPage(<BaseModal  
       {...{
         description,
         onClose,
-        isLoading:isLoading|| isIdle,
+        isLoading,
         title
       }} 
+      onLoadHandler={onLoadHandler}
       handler={onHandler}
     />)
 }

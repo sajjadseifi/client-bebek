@@ -5,19 +5,19 @@ import { SettingIcons } from '../../../components/Setting/SettingIcons'
 import { AccessAdmin } from '../../../components/Auth/AccessAdmin'
 import { categoryAPi } from '../../../core/api'
 import { toast } from 'react-toastify'
+import { queryClient } from '../../../App'
 
 export const CategoryItem = ({id,title,description,icon,color,isLink,isActive,...props}) => {
   const navigate = useNavigate()
-
+  
   const onEdit = ()=>{
    navigate(`/category/update/${id}`)
   }
   const onDelete = (status) => {
-    if(status) 
-       toast.success(`منو  ${title} با موفقیت حذف شد`)
-    else 
-      toast.error(`حذف منو ${title} با خطا مواجه شد`)
-   
+    if(status)  toast.success(`منو  ${title} با موفقیت حذف شد`)
+    else  toast.error(`حذف منو ${title} با خطا مواجه شد`)
+  
+    queryClient.refetchQueries({queryKey:['categories']})
   }
   const Component = isLink ? Link : Fragment
   return (
