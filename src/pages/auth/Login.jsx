@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import CoffeeLogo from '../../assets/logo/black.jpg'
+import React from 'react'
 import { TextField } from '../../components/UI/Field/Text'
 import {FaKey} from 'react-icons/fa'
 import {BiSolidUser} from 'react-icons/bi'
@@ -10,12 +9,29 @@ import { useNavigate } from 'react-router'
 import { useAuthentication } from '../../core/context/auth.context'
 import { FormProvider, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
+import * as yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup';
+
+const schema = yup.object({
+    username:yup
+    .string()
+    .min(3,'حداقل 3 حرف وارد کنید')
+    .max(20,'حد اکثر 20 حرف وارد کنید')
+    .matches(/[_a-zA-Z][_a-zA-Z0-9]*/,'فرمت نام کاربری وارد شده اشتباه است')
+    .required('فیلد نام کاربری اجباری است.'),
+    password:yup
+    .string()
+    .min(6,'حداقل 6 حرف وارد کنید')
+    .max(32,'حد اکثر 32 حرف وارد کنید')
+    .required('فیلد گذرواژه اجباری است.'),
+}).required();
+
 
 export const Login = () => {
   const navigate = useNavigate()
-  const methods = useForm();
+  const methods = useForm({resolver:yupResolver(schema)});
   const { handleSubmit } = methods
-  const {setToken,token,isLogined} = useAuthentication()
+  const {setToken} = useAuthentication()
 
   const onLoginSuccess = (data) => {
     setToken(data.token)
@@ -32,11 +48,9 @@ export const Login = () => {
     const userLogin = { ...data };
     mutate(userLogin);
   });
-
   return (
     <div className='h-full w-full flex flex-col items-center justify-center px-4'>
       <div className='text-center space-y-1 '>
-         {/* <img className='w-1/6 mx-auto rounded-full' src={CoffeeLogo}/> */}
          <h1 className='text-white text-4xl'>ورود</h1>
       </div>
       <div className='my-2'></div>
@@ -50,7 +64,7 @@ export const Login = () => {
             />
           <TextField 
               type="password" 
-              lable='رمز عبور'  
+              lable='گذرواژه'  
               icon={<FaKey/>}   
               name='password'
           />
