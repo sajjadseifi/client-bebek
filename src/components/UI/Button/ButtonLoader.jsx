@@ -12,7 +12,7 @@ export const ButtonLoader = ({
    </div>
   return (
    <div className='mt-2'>
-      <button class="duration-150 bg-lime-400 hover:bg-lime-500 p-2 px-10 rounded w-full disabled:opacity-70 h-10 "   disabled={loading && disabled} {...props}>{loading?spinner:title}</button>
+      <button className="duration-150 bg-lime-400 hover:bg-lime-500 p-2 px-10 rounded w-full disabled:opacity-70 h-10 "   disabled={loading && disabled} {...props}>{loading?spinner:title}</button>
    </div>
   )
 }

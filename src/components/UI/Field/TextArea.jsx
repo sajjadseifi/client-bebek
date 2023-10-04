@@ -11,8 +11,8 @@ export const TextArea = ({name,icon,lable='',...props}) => {
 
       <div className='text-lime-400 my-1'>
          <label htmlFor={props.id}>{lable}</label>
-         <div class="w-full  bg-lime-100 rounded mt-2" onClick={()=>ref.current?.focus()}>
-            <div class="w-full min-w-[200px] flex items-center justify-between">
+         <div className="w-full  bg-lime-100 rounded mt-2" onClick={()=>ref.current?.focus()}>
+            <div className="w-full min-w-[200px] flex items-center justify-between">
                <textarea 
                      ref={ref} 
                      rows={3}

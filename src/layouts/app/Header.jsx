@@ -10,7 +10,7 @@ const details = {
 
 export const Header = () => {
   return (
-<header class="flex flex-row-reverse justify-between items-center p-5 text-left  bg-natural-900">
+<header className="flex flex-row-reverse justify-between items-center p-5 text-left  bg-natural-900">
       <Link to='/'>
          <h1 className='text-lime-400 text-4xl'>{details.title1}</h1>
          <h2 className='text-lime-500 text-xl'>{details.title2}</h2>

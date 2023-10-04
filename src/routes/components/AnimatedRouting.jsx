@@ -10,9 +10,9 @@ export const AnimatedRouting = ({children}) => {
    key = isMenu ? '/menu' : key
 
    return (
-      <TransitionGroup >
+      <TransitionGroup  className='h-full'>
          <CSSTransition  key={key} classNames="fade" timeout={300}>
-            {children}
+            <div className='h-full'>{children}</div>
          </CSSTransition>
       </TransitionGroup>
   )

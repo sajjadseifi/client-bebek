@@ -44,32 +44,30 @@ const iconButtons = [
       authenticated:true
    },
 ] 
+const classStyle = `
+   text-xs
+   md:text-sm 
+   text-lime-700 
+   text-center 
+   space-y-2 
+   py-2 
+   px-4 
+   duration-150
+   bg-lime-200
+   rounded-full
 
+`
 export const NavigationButton = ({title,Icon,route}) => {
    const [active,setActive] = useState(false)
 
-   const classStyle = `
-         text-xs
-         md:text-sm 
-         text-lime-700 
-         text-center 
-         space-y-2 
-         py-2 
-         px-4 
-         duration-150
-         bg-lime-200
-         rounded-full
-         ${active?'opacity-100  mb-10 xs:mb-5 ':'opacity-60 mb-0'}
-      `
 
+      
+   const onClasses = ({isActive}) => {
+      setActive(isActive)
+      return  classStyle + (active?'opacity-100  mb-10 xs:mb-5 ':'opacity-60 mb-0')
+   }
    return (
-      <NavLink  
-         to={route}
-         className={({isActive})=>{
-            setActive(isActive)
-            return classStyle
-         }} 
-      >
+      <NavLink  to={route} className={onClasses} >
          <div className='flex flex-col  items-center justify-center space-y-1 text-xs '>
             <span >{<Icon className='text-xl xs:text-lg'/>}</span>
             <span className='text-md  hidden xs:block' >{title}</span>
@@ -90,7 +88,7 @@ export const BottomNavigation = ({className,height=60,...props}) => {
       }}
       {...props}
       >
-      {btns.map((props)=><NavigationButton {...props} />)}
+      {btns.map((props,idx)=><NavigationButton key={idx} {...props} />)}
     </div>
   )
 }

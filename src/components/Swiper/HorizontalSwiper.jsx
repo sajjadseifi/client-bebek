@@ -8,7 +8,7 @@ const HorizontalSwiper = ({slides=[],...props}) => {
         slidesPerView={3}
         loop={true}
         centeredSlides={true}
-        roundLengths={true}
+        // roundLengths={true}
         style={{ paddingLeft: '4%',paddingRight: '4%'}}
         {...props}
         >

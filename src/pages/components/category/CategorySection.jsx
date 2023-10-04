@@ -83,7 +83,7 @@ export const CategorySection = ({isLink=true,categoryId=null,onChange=(category)
    }  
 
    return (
-   <div className='py-2 px-2'>
+   <div className='py-2 px-4'>
       <HorizontalSwiper  breakpoints={ breakpoints} slides={slides}   />
       <div className='my-2'></div>
       <CategoryRoute category={selectedCategory} onNext={onNextCategory} />
