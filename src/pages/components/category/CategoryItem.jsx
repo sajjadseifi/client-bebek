@@ -21,14 +21,14 @@ export const CategoryItem = ({id,title,description,icon,color,isLink,isActive,..
   }
   const Component = isLink ? Link : Fragment
   return (
-    <li color={`rounded-sm flex-1 h-full cursor-pointer relative`} {...props}>
-      <Component to={`/menu/${id}`} >
+    <li color={`rounded-sm flex-1 flex flex-col h-full cursor-pointer relative`} {...props}>
+      <Component to={`/menu/${id}`}  className='flex-1'>
         <CagtegoryCard active={isActive}>
            <div>
-              <img  style={{width:60,height:60}} className='rounded-full' src={icon}/>
+              <img    className='w-10 h-10 sm:w-14 sm:h-14 rounded-full' src={icon}/>
            </div>
            <div className='flex flex-col flex-1 '>
-              <span className={`text-sm pt-2 ${isActive ? 'text-lime-950':''}`}>{title}</span>
+              <span className={`text-xs sm:text-sm  pt-2 ${isActive ? 'text-lime-950':''}`}>{title}</span>
            </div>
         </CagtegoryCard>
       </Component>

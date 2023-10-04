@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useFormContext } from 'react-hook-form'
-import { BiEdit } from 'react-icons/bi'
+import { BiEdit, BiTrash } from 'react-icons/bi'
 import { CgMathPlus } from 'react-icons/cg'
 import { ErrorMessage } from '../Error/ErrorMessage'
 
@@ -39,7 +39,7 @@ export const ImageFieldSqure = ({name ,lable='',...props}) => {
                   {src && <img src={src } className='w-full h-full' />}
                   <div className='absolute left-0 top-0 w-full h-full flex items-center justify-center'>
                      <div className='p-2 bg-lime-100 bg-opacity-40 rounded-full'>
-                     {src ? <BiEdit size={40}/>:<CgMathPlus size={40}/>}
+                     {src ? <BiTrash color='red'  onClick={()=>setValue(name,null)} size={40}/>:<CgMathPlus size={40}/>}
                         
                      </div>
                   </div>

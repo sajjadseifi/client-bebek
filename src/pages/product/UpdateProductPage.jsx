@@ -5,7 +5,7 @@ import { productAPI } from '../../core/api'
 import {  useQuery } from 'react-query'
 import { toast } from 'react-toastify'
 import * as yup from 'yup'
-import { imageYup } from '../../core/helper/validation/imageValidation'
+import { imageNullableYup, imageYup } from '../../core/helper/validation/imageValidation'
 
 const schema = yup.object({
   categoryId: yup.string()
@@ -17,7 +17,7 @@ const schema = yup.object({
   description: yup.string()
   .max(100,'حداکثر 100 حرف وارد کنید')
   .required('فیلد توضیحات اجباری است.'),
-  thumbnail: imageYup
+  thumbnail: imageNullableYup
 }).required();
 
 
