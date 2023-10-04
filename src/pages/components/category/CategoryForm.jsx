@@ -7,10 +7,7 @@ import { TextArea } from '../../../components/UI/Field/TextArea';
 import { ButtonLoader } from '../../../components/UI/Button/ButtonLoader';
 import { BiImageAdd, BiText } from 'react-icons/bi';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
-import { ErrorMessage } from '../../../components/UI/Error/ErrorMessage';
-
-
+import { useNavigate } from 'react-router';
 
 export const CategoryForm = ({
    defaultValues = {},
@@ -19,14 +16,18 @@ export const CategoryForm = ({
    btnText,
    onSuccess = (data) => alert("success requert"),
    onError = (error) => alert("faild requert"),
-   onSettled= () => alert("settled requert"),
    validationShema = {},
 }) => {
    const methods = useForm( {defaultValues, resolver: yupResolver(validationShema)} )
-   const { handleSubmit,setValue,formState:{errors} } = methods
-
+   const { handleSubmit,setValue } = methods
+   const navigate = useNavigate()
    const { mutate, isLoading } = useMutation(api, { 
-     onSuccess,
+    onSuccess:(data)=>{
+      onSuccess(data)
+      const category_id = data.category.id
+      const url =  `/menu/${category_id}`
+      navigate(url)
+    },
      onError: (data)=>onError(data),
     });
 

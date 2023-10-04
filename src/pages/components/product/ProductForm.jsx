@@ -9,6 +9,7 @@ import { BiImageAdd, BiText } from 'react-icons/bi';
 import { CategorySection } from '../category/CategorySection';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ErrorMessage } from '../../../components/UI/Error/ErrorMessage';
+import { useNavigate } from 'react-router';
 
 export const ProductForm = ({
   validationShema = {},
@@ -19,10 +20,20 @@ export const ProductForm = ({
    onSuccess= () => {},
    onError= () =>{},
 }) => {
-   const [category,setCategory] = useState()
-   const methods = useForm( {defaultValues : {} , resolver: yupResolver(validationShema)}  )
-   const { handleSubmit, setValue } = methods
-   const { mutate, isLoading } = useMutation(api, { onSuccess, onError });
+  const [category,setCategory] = useState()
+  const methods = useForm( {defaultValues : {} , resolver: yupResolver(validationShema)}  )
+  const { handleSubmit, setValue } = methods
+  const navigate = useNavigate()
+
+
+   const { mutate, isLoading } = useMutation(api, {
+     onSuccess:()=>{
+        onSuccess()
+        const url =  `/menu` + category?.id ? `/${category.id}`:''
+        navigate(url)
+      }, 
+   onError
+   });
 
    const request = (d) => {
       const data = onFormatData(d)
@@ -31,7 +42,7 @@ export const ProductForm = ({
    
    useEffect(()=>{
     setValue('categoryId',category?.id)
-   },[category])
+   },[category,setValue])
 
    useEffect(()=>{
        const keys = Object.keys(defaultValues)

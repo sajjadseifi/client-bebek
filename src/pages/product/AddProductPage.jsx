@@ -5,7 +5,6 @@ import { toast } from 'react-toastify'
 import * as yup from 'yup';
 import { imageNullableYup } from '../../core/helper/validation/imageValidation';
 
-
 const schema = yup.object({
   categoryId: yup.string()
   .required('لطفا یک دسته بندی را انتخاب کنید'),
@@ -19,14 +18,15 @@ const schema = yup.object({
   thumbnail: imageNullableYup
 }).required();
 
-export const AddProductPage = ({}) => {
-
+export const AddProductPage = () => {
    const onFormatData = (data) => {
       const productData = { ...data }
       return productData
     }
 
-
+    const onSuccess = (data) => {
+          toast.success("محصول با موفقیت اضافه  شد")
+    }
    return (
     <div className='text-right flex-1'>
       <h1 className='text-center text-4xl text-purple-500'>افزودن محصول</h1>
@@ -35,7 +35,7 @@ export const AddProductPage = ({}) => {
           onFormatData={onFormatData}
           btnText='افزودن'
           validationShema={schema}
-          onSuccess={(data)=>toast.success("محصول با موفقیت اضافه  شد")}
+          onSuccess={onSuccess}
           onError={(err)=>toast.error("درخواست افزودن محصول با خطا مواجه شد")}
       />
     </div>

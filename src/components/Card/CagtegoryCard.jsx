@@ -9,7 +9,7 @@ flex
 flex-col 
 items-center  
 justify-center 
-h-30
+h-full
 relative
 `
 export const CagtegoryCard = ({children,active}) => {

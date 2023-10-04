@@ -12,13 +12,13 @@ export const Header = () => {
   return (
 <header class="flex flex-row-reverse justify-between items-center p-5 text-left  bg-natural-900">
       <Link to='/'>
-         <h1 className='text-lime-400 text-2xl'>{details.title1}</h1>
-         <h2 className='text-lime-500'>{details.title2}</h2>
+         <h1 className='text-lime-400 text-4xl'>{details.title1}</h1>
+         <h2 className='text-lime-500 text-xl'>{details.title2}</h2>
       </Link>
       <Link to='/'>
          <img  
-            width={80}
-            height={80}  
+            width={60}
+            height={60}  
             src={details.logo}
             className="rounded-full" 
             alt="ببک" 

@@ -1,14 +1,12 @@
 import React from 'react'
-import { Navigate, Route, Routes, useLocation,  } from 'react-router'
+import { Navigate, Route, Routes,   } from 'react-router'
 import { Menu } from '../pages/Menu'
-import { AppLayout } from '../layouts/app/AppLayout'
 import { QrCodePage } from '../pages/QrCodePage'
 import { AddProductPage } from '../pages/product/AddProductPage'
 import { AddCategoryPage } from '../pages/category/AddCategoryPage'
 import { UpdateCategoryPage } from '../pages/category/UpdateCategoryPage'
 import { UpdateProductPage } from '../pages/product/UpdateProductPage'
-import { Login } from '../pages/auth/Login'
-import { Logout } from '../pages/auth/Logout'
+
 
 export const AppRoutes = () => {
 

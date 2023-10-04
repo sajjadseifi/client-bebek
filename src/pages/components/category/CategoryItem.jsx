@@ -19,19 +19,18 @@ export const CategoryItem = ({id,title,description,icon,color,isLink,isActive,..
   
     queryClient.refetchQueries({queryKey:['categories']})
   }
-  const Component = isLink ? Link : Fragment
   return (
-    <li color={`rounded-sm flex-1 flex flex-col h-full cursor-pointer relative`} {...props}>
-      <Component to={`/menu/${id}`}  className='flex-1'>
-        <CagtegoryCard active={isActive}>
+    <li className={`rounded-sm flex flex-col cursor-pointer relative`} style={{height:'100%'}} {...props}>
+      <div onClick={()=>isLink &&  navigate(`/menu/${id}`)}  className='flex-1 '>
+        <CagtegoryCard active={isActive} className='h-full flex flex-col'>
            <div>
               <img    className='w-10 h-10 sm:w-14 sm:h-14 rounded-full' src={icon}/>
            </div>
-           <div className='flex flex-col flex-1 '>
+           <div className='flex flex-col flex-1 justify-center'>
               <span className={`text-xs sm:text-sm  pt-2 ${isActive ? 'text-lime-950':''}`}>{title}</span>
            </div>
         </CagtegoryCard>
-      </Component>
+      </div>
       <AccessAdmin>
           {isLink && (
             <div className=' w-full flex items-center justify-center my-3'>
