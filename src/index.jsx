@@ -8,10 +8,12 @@ import './fonts.css';
 import './index.css';
 import 'swiper/css';
 
+import { Authentication } from './core/context/auth.context';
+
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
 
 const Client = ()=> <BrowserRouter ><App /></BrowserRouter>
-root.render(<Client/>);
+root.render(<Authentication><Client/></Authentication>);
 
 reportWebVitals();

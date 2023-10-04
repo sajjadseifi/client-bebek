@@ -1,7 +1,10 @@
 import React from 'react'
+import { Routes } from 'react-router'
 
 export const AdminRoutes = () => {
   return (
-    <div>admin.routes</div>
+    <Routes>
+        
+    </Routes>
   )
 }

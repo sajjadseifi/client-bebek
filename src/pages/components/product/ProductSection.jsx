@@ -4,8 +4,15 @@ import { useQuery } from 'react-query'
 import { ProductSkeletonList } from './ProductSkeletonList'
 import { ProductList } from './ProductList'
 import { useParams } from 'react-router'
+import { AccessAdmin } from '../../../components/Auth/AccessAdmin'
+import { TiPlus } from 'react-icons/ti'
+import { IconButton } from '../../../components/UI/Button/IconButton'
+import { useModalPage } from '../../../components/ModalPage/ModalPage'
+import { AddProductPage } from '../../product/AddProductPage'
+import { FaPlus } from 'react-icons/fa'
 
-export const ProductSection = () => {
+export const ProductSection = ({category}) => {
+  const {addPage} = useModalPage()
   const params = useParams()
   const categoryId = params.categoryId
   
@@ -21,8 +28,7 @@ export const ProductSection = () => {
   },[params,categoryId])
   
   const products = data?.products ?? []
-  
-  console.log({categoryId,isLoading})
+
   return (
     <div className='py-2 px-4'>
       <ul className='scrolle'>
@@ -31,7 +37,10 @@ export const ProductSection = () => {
           :  <ProductList products={products}/>
         }
         {!isLoading && !products.length &&(
-          <h4 className='text-red-500 text-center py-10 text-3xl'>محصولی ثبت نشده!</h4>
+          <div className='py-5  text-center flex flex-col justify-center items-center space-y-2'>
+            <h4 className='text-red-500   text-3xl'>محصولی ثبت نشده!</h4>
+            <IconButton   bgColor='bg-purple-200' textColor='text-purple-800' title='محصول جدید' icon={<FaPlus />} />
+          </div>
         )}
       </ul>
     </div>
