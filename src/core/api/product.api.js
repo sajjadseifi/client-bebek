@@ -57,3 +57,8 @@ export const update = async (data={})=> {
 export const getProductById = (productId) => axiosClient
 .get(`product/${productId}`)
 .then((res) => res.data.data)
+
+
+export const deleteProductById = (productId) => axiosClient
+.post(`admin/product/remove/${productId}`)
+.then((res) => res.data.data)

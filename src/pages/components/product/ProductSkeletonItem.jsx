@@ -2,7 +2,7 @@ import React from 'react'
 
 export const ProductSkeletonItem = () => {
   return (
-          <div role="status" class="p-3 space-y-4  rounded-lg rounded-tr-none shadow animate-pulse  md:p-6 bg-gray-800">
+          <div role="status" class="py-5 p-3 space-y-4  rounded-lg rounded-tr-none shadow animate-pulse  md:p-6 bg-gray-800">
             <div class="flex items-center justify-between">
                <div class="h-16 flex items-center justify-center  bg-gray-300 rounded dark:bg-gray-700">
                   <svg class="w-20 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">

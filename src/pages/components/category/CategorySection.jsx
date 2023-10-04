@@ -38,7 +38,6 @@ const breakpoints = {
   }
 
 export const CategorySection = ({isLink=true,categoryId=null,onChange=(category)=>{}}) => {
-   const navigate = useNavigate()
    const [selectedCategory,setSelectedCategory] = useState(null)
 
    const {  data,isLoading } = useQuery({

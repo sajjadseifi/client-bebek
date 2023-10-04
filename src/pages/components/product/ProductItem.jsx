@@ -3,6 +3,8 @@ import { ProductCard } from '../../../components/Card/ProductCard'
 import { SettingIcons } from '../../../components/Setting/SettingIcons'
 import { useNavigate } from 'react-router'
 import { AccessAdmin } from '../../../components/Auth/AccessAdmin'
+import { productAPI } from '../../../core/api'
+import { toast } from 'react-toastify'
 
 export const ProductItem = ({id,slug,title,description,thumbnail,price}) => {
    const _price = +price 
@@ -12,7 +14,11 @@ export const ProductItem = ({id,slug,title,description,thumbnail,price}) => {
    navigate(`/product/update/${id}`)
   }
 
-  const onDelete = ()=> {
+  const onDelete = (status)=> {
+      if(status) 
+      toast.success(`محصول  ${title} با موفقیت حذف شد`)
+   else 
+   toast.error(`حذف محصول ${title} با خطا مواجه شد`)
 
   }
 
@@ -25,6 +31,15 @@ export const ProductItem = ({id,slug,title,description,thumbnail,price}) => {
                deleting
                className='space-x-2'
                onEdit={onEdit}
+               deleteApi={()=>productAPI.deleteProductById(id)}
+               onDelete={onDelete}
+               modal = {{
+                 title:(   <>
+                   <span>حذف منو</span>
+                   <span className='bg-red-200 text-red-600 rounded-sm mx-1 p-3 py-0 '>{title}</span>
+                 </>),
+                 description: `با حذف منو تمامی محصولات منو حذف خواهند شد.`,
+                }}
                />
          </div>
       </AccessAdmin>

@@ -13,12 +13,11 @@ export const CategoryItem = ({id,title,description,icon,color,isLink,isActive,..
    navigate(`/category/update/${id}`)
   }
   const onDelete = (status) => {
-    if(status) {
+    if(status) 
        toast.success(`منو  ${title} با موفقیت حذف شد`)
-    }
-    else {
+    else 
       toast.error(`حذف منو ${title} با خطا مواجه شد`)
-   }
+   
   }
   const Component = isLink ? Link : Fragment
   return (
