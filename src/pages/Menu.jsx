@@ -24,7 +24,7 @@ export const Menu = () => {
     productSection = <ProductSection category={category}  />
   }
   return (
-    <div className='flex flex-col h-full'>
+    <div className='flex flex-col'>
         <div>
           <CategorySection  categoryId={categoryId} onChange={setCategory} />
         </div>

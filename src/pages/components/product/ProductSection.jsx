@@ -29,7 +29,7 @@ export const ProductSection = (props) => {
   const isFetching = isLoading ||  isRefetching || !isFetched
 
   return (
-    <div className='py-2 px-4'>
+    <div className='px-4'>
       <ul >
         {isFetching 
           ?  <ProductSkeletonList counts={2}/> 
