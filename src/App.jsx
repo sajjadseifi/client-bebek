@@ -14,11 +14,10 @@ const  App = () => {
 
 return (
    <SuspenseTimeout   minDuration={3500} fallback={<ApploadingApp />}>
-      <div className='bg-teal-200  text-teal-600'></div>
       <ModalProvider>
       <QueryClientProvider client={queryClient}>
          <Routers/>
-         <BottomNavigation height={60}/>
+         <BottomNavigation height={70}/>
          <ToastContainer 
             position="top-center"
             autoClose={3000}
@@ -32,6 +31,7 @@ return (
             theme="dark"
             className='max-w-[300px] mx-auto' 
          />
+         <div className='bg-teal-200  text-teal-600' ></div> 
       </QueryClientProvider>
    </ModalProvider>
    </SuspenseTimeout>

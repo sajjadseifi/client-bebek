@@ -7,7 +7,9 @@ export const AppLayout = ({children}) => {
     <div className='flex flex-col	  h-full select-none' >
         <Header/>
         {children}
-        <Footer/>
+        <div style={{paddingBottom:80}}>
+          <Footer/>
+        </div>
     </div>
   )
 }

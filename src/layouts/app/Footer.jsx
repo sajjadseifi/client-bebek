@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
-    <footer className='py-3' style={{paddingBottom:70}}> 
+    <footer className='py-3' > 
         <div className="text-center text-neutral-200  dark:text-neutral-200 text-sm">
             <span>Powered By </span>
             <Link className="text-lime-400 " href="/">Sajjad Seifi </Link>
