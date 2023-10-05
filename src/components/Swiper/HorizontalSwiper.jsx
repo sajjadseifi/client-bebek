@@ -6,12 +6,11 @@ const HorizontalSwiper = ({slides=[],...props}) => {
       <Swiper
         spaceBetween={4}
         slidesPerView={3}
-
         style={{ paddingLeft: '4%',paddingRight: '4%'}}
         {...props}
         >
         {slides.map((slide,idx)=><SwiperSlide  
-          className='bg-transparent'
+          className='bg-transparent  ring-inset'
           style={{height:'auto'}}
           key={idx}>
           {slide}

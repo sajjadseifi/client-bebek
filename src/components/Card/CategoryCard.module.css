@@ -1,0 +1,8 @@
+.CategoryCard  {
+      transform: scale(1);
+      transition: 0.05s;
+}
+
+.CategoryCard:active  {
+   transform: scale(0.95);
+}

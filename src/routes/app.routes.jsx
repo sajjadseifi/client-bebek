@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React, {  lazy } from 'react'
 import { Navigate, Route, Routes,   } from 'react-router'
 import { AppLoading } from '../components/AppLoading/AppLoading';
 import { SuspenseTimeout } from '../components/Suspense/SuspenseTimeout';

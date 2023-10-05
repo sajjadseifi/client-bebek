@@ -21,7 +21,7 @@ export const CategoryItem = ({id,title,description,icon,color,isLink,isActive,..
   }
   return (
     <li className={`rounded-sm flex flex-col cursor-pointer relative`} style={{height:'100%'}} {...props}>
-      <div onClick={()=>isLink &&  navigate(`/menu/${id}`)}  className='flex-1 '>
+      <div onClick={()=>isLink &&  navigate(`/menu/${id}`)}  className='flex-1 outline-0 '>
         <CagtegoryCard active={isActive} className='h-full flex flex-col'>
            <div>
               <img    className='w-10 h-10 sm:w-14 sm:h-14 rounded-full' src={icon}/>
