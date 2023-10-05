@@ -1,11 +1,11 @@
-import { BottomNavigation } from "./layouts/BottomNavigation";
-import { Routers } from "./routes/routers";
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { Suspense, lazy } from "react";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import { ModalProvider } from "./components/ModalPage/ModalPage";
-import { Suspense } from "react";
 import { AppLoading } from "./components/AppLoading/AppLoading";
+
+const ModalProvider = lazy(() => import('./components/ModalPage/ModalPage'));
+const BottomNavigation = lazy(() => import('./layouts/BottomNavigation'));
+const Routers = lazy(() => import('./routes/routers'));
 
 export const queryClient = new QueryClient()
 

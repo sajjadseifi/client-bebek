@@ -23,3 +23,5 @@ export const  Routers = () => {
     </AppLayout>
   )
 }
+
+export default Routers

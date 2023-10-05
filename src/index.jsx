@@ -7,6 +7,7 @@ import App from './App';
 import './fonts.css';
 import './index.css';
 import 'swiper/css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Authentication } from './core/context/auth.context';
 

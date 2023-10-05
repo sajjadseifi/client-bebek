@@ -75,3 +75,4 @@ export const ModalProvider = ({children}) => {
 }
 
 
+export default ModalProvider

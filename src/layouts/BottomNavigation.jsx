@@ -92,3 +92,5 @@ export const BottomNavigation = ({className,height=60,...props}) => {
     </div>
   )
 }
+
+export default BottomNavigation
