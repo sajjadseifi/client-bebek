@@ -6,7 +6,6 @@ import { AccessAdmin } from '../../../components/Auth/AccessAdmin'
 import { productAPI } from '../../../core/api'
 import { toast } from 'react-toastify'
 import { queryClient } from '../../../App'
-import { IoMdImage } from 'react-icons/io'
 import { FaImage } from 'react-icons/fa'
 
 export const ProductItem = ({id,slug,title,description,thumbnail,price}) => {
@@ -38,10 +37,10 @@ export const ProductItem = ({id,slug,title,description,thumbnail,price}) => {
                onDelete={onDelete}
                modal = {{
                  title:(   <>
-                   <span>حذف منو</span>
+                   <span>حذف محصول</span>
                    <span className='bg-red-200 text-red-600 rounded-sm mx-1 p-3 py-0 '>{title}</span>
                  </>),
-                 description: `با حذف منو تمامی محصولات منو حذف خواهند شد.`,
+                 description: `آیا برای حذف محصول اطمینان دارید؟`,
                 }}
                />
          </div>
