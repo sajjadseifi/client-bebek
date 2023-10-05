@@ -60,7 +60,6 @@ export const ProductItem = ({id,slug,title,description,thumbnail,price}) => {
             </div>
          </div>
       </div>
-      
     </ProductCard>
   )
 }

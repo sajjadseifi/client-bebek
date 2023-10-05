@@ -18,12 +18,10 @@ const classStyle = `
 `
 export const NavigationButton = ({title,Icon,route}) => {
    const [active,setActive] = useState(false)
-
-
       
    const onClasses = ({isActive}) => {
       setActive(isActive)
-      return  classStyle + (active?'opacity-100  mb-10 xs:mb-5 ':'opacity-60 mb-0')
+      return  classStyle + (active?'opacity-100  mb-10 xs:mb-5 scale-110':'opacity-60 mb-0 scale-90')
    }
    return (
       <NavLink  to={route} className={onClasses} >
@@ -36,7 +34,7 @@ export const NavigationButton = ({title,Icon,route}) => {
 }
 export const BottomNavigation = ({className,height=60,...props}) => {
    const {isLogined} = useAuthentication()
-   const btns = iconButtons.filter((btn)=> !('authenticated' in btn) || btn.authenticated === isLogined)
+   const btns = iconButtons.filter((btn)=> !('authenticated' in btn) || btn.authenticated == isLogined)
 
   return (
     <div 
