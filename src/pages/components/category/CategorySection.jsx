@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { CategoryItem } from './CategoryItem'
 import HorizontalSwiper from '../../../components/Swiper/HorizontalSwiper'
-import { useNavigate, useParams } from 'react-router'
 import { categoryAPi } from '../../../core/api'
 import { useQuery } from 'react-query'
 import { CategorySkeleton } from './CategorySkeleton'
-import {TiPlus} from 'react-icons/ti'
 import { SelectedCategory } from '../SelectedCategory'
 import { AccessAdmin } from '../../../components/Auth/AccessAdmin'
 import { IconButton } from '../../../components/UI/Button/IconButton'
-import { useModalPage } from '../../../components/ModalPage/ModalPage'
-import { AddCategoryPage } from '../../category/AddCategoryPage'
-import { CategoryRoute } from './CategoryRoute'
+import { Link } from 'react-router-dom'
+import { TbCategoryFilled } from 'react-icons/tb'
 
 
 const breakpoints = {
@@ -40,7 +37,7 @@ const breakpoints = {
 export const CategorySection = ({isLink=true,categoryId=null,onChange=(category)=>{}}) => {
    const [selectedCategory,setSelectedCategory] = useState(null)
 
-   const {  data,isLoading } = useQuery({
+   const {  data,isLoading,isError } = useQuery({
       queryKey: ['categories'],
       queryFn:     categoryAPi.categoriesAllIndexApi,
     })
@@ -88,10 +85,21 @@ export const CategorySection = ({isLink=true,categoryId=null,onChange=(category)
    }  
 
    return (
-   <div className='py-4 px-4'>
-      <HorizontalSwiper  breakpoints={ breakpoints} slides={slides}   />
-      <div className='my-4'></div>
+      <>
+      <div className='px-4'>
+         <HorizontalSwiper  breakpoints={ breakpoints} slides={slides}   />
+         <AccessAdmin>
+            {!isLoading &&  isError && categories.length === 0 (
+               <div>
+                  <h1 className='text-white'>منویی ساخته نشده</h1>
+                  <Link to='/category/add' className='flex justify-center' >
+                     <IconButton  icon={<TbCategoryFilled/>}  bgColor='bg-orange-200' textColor='text-orange-600' title='ساخت منو'/>
+                  </Link>
+               </div>
+            )}
+         </AccessAdmin>
+      </div>
       <SelectedCategory category={selectedCategory}  />
-   </div>
+      </>
   )
 }
