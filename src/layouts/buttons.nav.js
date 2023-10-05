@@ -1,7 +1,6 @@
-import {BiAbacus,BiQrScan,BiCartAdd} from 'react-icons/bi'
+import {BiQrScan,BiCartAdd} from 'react-icons/bi'
 import {LuMenuSquare} from 'react-icons/lu'
-import {AiOutlineFileAdd} from 'react-icons/ai'
-import {TbLogout2} from 'react-icons/tb'
+import {TbCategoryFilled, TbLogin2, TbLogout2} from 'react-icons/tb'
 
 
 export const iconButtons = [
@@ -12,7 +11,7 @@ export const iconButtons = [
    },
    {
       title:'ثبت منو',
-      Icon:AiOutlineFileAdd,
+      Icon:TbCategoryFilled,
       route:'/category/add',
       authenticated:true
    },
@@ -30,7 +29,7 @@ export const iconButtons = [
    },
    {
       title:'ورود',
-      Icon:BiAbacus,
+      Icon:TbLogin2,
       route:'/auth/login',
       authenticated:false
    },
