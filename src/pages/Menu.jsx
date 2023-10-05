@@ -21,11 +21,7 @@ export const Menu = () => {
   },[category])
 
   if(categoryId) {
-    productSection = (
-      <div className='flex-1 overflow-scroll'>
-          <ProductSection category={category}  />
-      </div>
-    )
+    productSection = <ProductSection category={category}  />
   }
   return (
     <div className='flex flex-col h-full'>

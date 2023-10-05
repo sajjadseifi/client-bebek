@@ -30,7 +30,7 @@ export const ProductSection = (props) => {
 
   return (
     <div className='py-2 px-4'>
-      <ul className='scrolle'>
+      <ul >
         {isFetching 
           ?  <ProductSkeletonList counts={2}/> 
           :  <ProductList products={products}/>
@@ -40,7 +40,7 @@ export const ProductSection = (props) => {
           <div className='py-5  text-center flex flex-col justify-center items-center space-y-2'>
             <h4 className='text-red-500   text-3xl'>محصولی ثبت نشده!</h4>
             <AccessAdmin>
-              <Link to='/product/add'>
+              <Link to={`/product/add?categoryId=${categoryId}`}>
                 <IconButton   bgColor='bg-purple-200' textColor='text-purple-800' title='محصول جدید' icon={<FaPlus />} />
               </Link>
             </AccessAdmin>

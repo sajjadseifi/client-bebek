@@ -58,7 +58,6 @@ export const ProductForm = ({
    useEffect(()=>{
        const keys = Object.keys(defaultValues)
        keys.map((key)=>defaultValues[key] && setValue(key,defaultValues[key]))
-       
       },[defaultValues])
 
    const categoryId =   watch('categoryId')
