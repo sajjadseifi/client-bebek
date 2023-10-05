@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import {Route, Routes} from 'react-router-dom'
 import { AppLoading } from '../components/AppLoading/AppLoading';
+import { SuspenseTimeout } from '../components/Suspense/SuspenseTimeout';
 
 // const AnimatedRouting = lazy(() => import('./components/AnimatedRouting'));
 const AppLayout = lazy(() => import('../layouts/app/AppLayout'));
@@ -14,7 +15,7 @@ const AppRoutes = lazy(() => import('./app.routes'));
 export const  Routers = () => {
 
   return (
-    <Suspense fallback={<AppLoading/>}>
+    <SuspenseTimeout fallback={<AppLoading/>}>
       <AppLayout>
             <Routes>
                 <Route  path='/admin/*' Component={PrivateRoute}>
@@ -24,7 +25,7 @@ export const  Routers = () => {
                 <Route path='/*' Component={AppRoutes} />
             </Routes>
       </AppLayout>
-    </Suspense>
+    </SuspenseTimeout>
   )
 }
 

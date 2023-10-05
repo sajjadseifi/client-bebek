@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import { Navigate, Route, Routes,   } from 'react-router'
 import { AppLoading } from '../components/AppLoading/AppLoading';
+import { SuspenseTimeout } from '../components/Suspense/SuspenseTimeout';
 
 const Menu = lazy(() => import('../pages/Menu'));
 const QrCodePage = lazy(() => import('../pages/QrCodePage'));
@@ -12,7 +13,7 @@ const UpdateCategoryPage = lazy(() => import('../pages/category/UpdateCategoryPa
 export const AppRoutes = () => {
 
    return (
-      <Suspense fallback={<AppLoading/>}>
+      <SuspenseTimeout fallback={<AppLoading/>}>
          <Routes>
             <Route   path='/qr-code' Component={QrCodePage} />
             <Route   path='/menu/:categoryId' Component={Menu} />
@@ -23,7 +24,7 @@ export const AppRoutes = () => {
             <Route  path='/product/update/:productId' Component={UpdateProductPage} />
             <Route   path='*' element={<Navigate to='/menu' />} />
          </Routes>
-      </Suspense>
+      </SuspenseTimeout>
   )
 }
 
