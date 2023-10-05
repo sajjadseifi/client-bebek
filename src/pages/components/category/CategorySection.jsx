@@ -89,9 +89,9 @@ export const CategorySection = ({isLink=true,categoryId=null,onChange=(category)
 
    return (
    <div className='py-4 px-4'>
-      <SelectedCategory category={selectedCategory}  />
-      <div className='my-4'></div>
       <HorizontalSwiper  breakpoints={ breakpoints} slides={slides}   />
+      <div className='my-4'></div>
+      <SelectedCategory category={selectedCategory}  />
    </div>
   )
 }
