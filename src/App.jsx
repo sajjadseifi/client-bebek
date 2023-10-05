@@ -4,12 +4,15 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { ModalProvider } from "./components/ModalPage/ModalPage";
+import { Suspense } from "react";
+import { AppLoading } from "./components/AppLoading/AppLoading";
 
 export const queryClient = new QueryClient()
 
 const  App = () => {
 
 return (
+   <Suspense fallback={<AppLoading />}>
       <ModalProvider>
       <QueryClientProvider client={queryClient}>
          <Routers/>
@@ -29,7 +32,7 @@ return (
          />
       </QueryClientProvider>
    </ModalProvider>
-
+   </Suspense>
 )
 }
 export default App;
