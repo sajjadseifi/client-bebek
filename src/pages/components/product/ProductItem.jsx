@@ -27,7 +27,7 @@ export const ProductItem = ({id,slug,title,description,thumbnail,price}) => {
    return (
     <ProductCard key={id}>
       <AccessAdmin>
-         <div className='absolute top-0 left-0 py-3 p-2'>
+         <div className='absolute top-0 left-0 py-2'>
             <SettingIcons 
                editing 
                deleting

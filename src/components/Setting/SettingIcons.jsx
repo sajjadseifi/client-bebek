@@ -60,7 +60,7 @@ const onLoadHandler = () => isLoading || !isIdle
   return (
       <div className={` flex items-center justify-between   ${className}`} {...props}>
         {seeing && <span onClick={onSee} ><IconCircleButton  color='lime' Icon={CgEye}  /></span>}
-        {editing && <span onClick={onEdit} ><IconCircleButton color='gray' Icon={MdModeEditOutline}  /></span>}
+        {editing && <span onClick={onEdit} ><IconCircleButton color='teal' Icon={MdModeEditOutline}  /></span>}
         {deleting && <span onClick={onOpenModal} ><IconCircleButton color='red' Icon={IoMdTrash} /></span>}
       </div>
   )

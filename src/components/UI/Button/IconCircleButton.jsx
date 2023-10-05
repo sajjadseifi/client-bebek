@@ -6,8 +6,8 @@ export const IconCircleButton = ({
    Icon = ()=>{}
 }) => {
   return (
-    <div className={`p-1 rounded-md bg-${color}-200 text-${color}-700 cursor-pointer mx-1`}>
-        {icon ? icon :<Icon color={color}/>} 
+    <div className={`p-1 rounded-md  bg-${color}-200 text-${color}-600 cursor-pointer mx-1`}>
+        {icon ? icon :<Icon />} 
     </div>
   )
 }

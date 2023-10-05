@@ -14,6 +14,7 @@ const  App = () => {
 
 return (
    <SuspenseTimeout   minDuration={3500} fallback={<ApploadingApp />}>
+      <div className='bg-teal-200  text-teal-600'></div>
       <ModalProvider>
       <QueryClientProvider client={queryClient}>
          <Routers/>
