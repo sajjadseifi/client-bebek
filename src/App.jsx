@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Suspense, lazy } from "react";
 import { ToastContainer } from "react-toastify";
 import { AppLoading } from "./components/AppLoading/AppLoading";
+import { ApploadingApp } from './components/AppLoading/ApploadingApp';
 
 const ModalProvider = lazy(() => import('./components/ModalPage/ModalPage'));
 const BottomNavigation = lazy(() => import('./layouts/BottomNavigation'));
@@ -12,7 +13,7 @@ export const queryClient = new QueryClient()
 const  App = () => {
 
 return (
-   <Suspense fallback={<AppLoading />}>
+   <Suspense fallback={<ApploadingApp />}>
       <ModalProvider>
       <QueryClientProvider client={queryClient}>
          <Routers/>
