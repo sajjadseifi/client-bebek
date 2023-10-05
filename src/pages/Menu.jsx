@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { CategorySection } from './components/category/CategorySection'
 import { ProductSection } from './components/product/ProductSection'
 import { useNavigate, useParams } from 'react-router'
-import { ModalProvider } from '../components/ModalPage/ModalPage'
 
 export const Menu = () => {
   const [category,setCategory] = useState(null)
@@ -12,11 +11,13 @@ export const Menu = () => {
 
   let productSection = null
 
-  useEffect(()=>{
-    if(category && `${category.id}` !== `${categoryId}`){
+  const onNavigateCategory= () => {
+    if(category && `${category.id}` !== `${categoryId}`)
       navigate(`/menu/${category.id}`)
     }
-  
+  useEffect(()=>{
+    if(category && `${category.id}` !== `${categoryId}`)
+      navigate(`/menu/${category.id}`)
   },[category])
 
   if(categoryId) {
@@ -35,3 +36,6 @@ export const Menu = () => {
       </div>
   )
 }
+
+
+export default Menu

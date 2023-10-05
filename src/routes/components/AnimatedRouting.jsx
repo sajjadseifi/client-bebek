@@ -6,7 +6,7 @@ import './routers.styles.css'
 export const AnimatedRouting = ({children}) => {
    let location = useLocation();
    let key = location.pathname
-   const isMenu = key.split('/')[1] == 'menu'
+   const isMenu = key.split('/')[1] === 'menu'
    key = isMenu ? '/menu' : key
 
    return (
@@ -17,3 +17,6 @@ export const AnimatedRouting = ({children}) => {
       </TransitionGroup>
   )
 }
+
+
+export default AnimatedRouting

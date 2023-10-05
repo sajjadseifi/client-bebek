@@ -1,20 +1,11 @@
-import React, {  useRef, useState } from 'react'
+import React, {  useRef } from 'react'
 import { IconButton } from '../components/UI/Button/IconButton'
 import { FcDownload} from 'react-icons/fc'
 import QRCode from 'react-qr-code'
 import html2canvas from 'html2canvas'
-import { MdSaveAs } from 'react-icons/md'
 
 export const QrCodePage = () => {
-  const { cropPositionTop, cropPositionLeft, cropWidth, cropHeigth } = {
-    cropPositionTop: 0,
-    cropPositionLeft: 0,
-    cropWidth: 1400,
-    cropHeigth: 1800
-  };  
-  const baseUrl = window.location.origin
-  
-   const coffeMenuLink = `${baseUrl}/menu`  
+
    const ref = useRef()
 
 
@@ -36,6 +27,9 @@ export const QrCodePage = () => {
       }
     );
    }
+
+   const baseUrl = window.location.origin
+   const coffeMenuLink = `${baseUrl}/menu`  
 
   return (
     <div  className='h-full' >
@@ -66,3 +60,5 @@ export const QrCodePage = () => {
     </div>
   )
 }
+
+export default QrCodePage

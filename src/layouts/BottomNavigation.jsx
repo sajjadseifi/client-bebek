@@ -1,49 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import {BiAbacus,BiAccessibility,BiQrScan,BiCartAdd} from 'react-icons/bi'
-import {LuMenuSquare} from 'react-icons/lu'
-import {AiOutlineFileAdd} from 'react-icons/ai'
-import {TbLogout2} from 'react-icons/tb'
 
 import { useAuthentication } from '../core/context/auth.context'
+import { iconButtons } from './buttons.nav'
 
-const iconButtons = [
-   {
-      title:'QR کد',
-      Icon:BiQrScan,
-      route:'/qr-code',
-   },
-   {
-      title:'ثبت منو',
-      Icon:AiOutlineFileAdd,
-      route:'/category/add',
-      authenticated:true
-   },
-   {
-      title:'منو',
-      Icon:LuMenuSquare,
-      route:'/menu'
-   },
-
-   {
-      title:'ثبت محصول',
-      Icon:BiCartAdd,
-      route:'/product/add',
-      authenticated:true
-   },
-   {
-      title:'ورود',
-      Icon:BiAbacus,
-      route:'/auth/login',
-      authenticated:false
-   },
-   {
-      title:'خروج',
-      Icon:TbLogout2,
-      route:'/auth/logout',
-      authenticated:true
-   },
-] 
 const classStyle = `
    text-xs
    md:text-sm 
@@ -55,7 +15,6 @@ const classStyle = `
    duration-150
    bg-lime-200
    rounded-full
-
 `
 export const NavigationButton = ({title,Icon,route}) => {
    const [active,setActive] = useState(false)
@@ -77,7 +36,7 @@ export const NavigationButton = ({title,Icon,route}) => {
 }
 export const BottomNavigation = ({className,height=60,...props}) => {
    const {isLogined} = useAuthentication()
-   const btns = iconButtons.filter((btn)=> !('authenticated' in btn) || btn.authenticated == isLogined)
+   const btns = iconButtons.filter((btn)=> !('authenticated' in btn) || btn.authenticated === isLogined)
 
   return (
     <div 

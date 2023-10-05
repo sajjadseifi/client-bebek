@@ -4,11 +4,9 @@ const HorizontalSwiper = ({slides=[],...props}) => {
   return (
     <div  className='mx-auto'>
       <Swiper
-        spaceBetween={6}
+        spaceBetween={4}
         slidesPerView={3}
-        loop={true}
-        centeredSlides={true}
-        roundLengths={true}
+
         style={{ paddingLeft: '4%',paddingRight: '4%'}}
         {...props}
         >

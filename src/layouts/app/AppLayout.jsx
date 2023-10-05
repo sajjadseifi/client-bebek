@@ -11,3 +11,4 @@ export const AppLayout = ({children}) => {
     </div>
   )
 }
+export default AppLayout

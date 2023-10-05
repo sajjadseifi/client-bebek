@@ -41,3 +41,5 @@ export const AddProductPage = () => {
     </div>
   )
 }
+
+export default AddProductPage

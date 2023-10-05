@@ -36,3 +36,5 @@ export const AddCategoryPage = () => {
     </div>
   )
 }
+
+export default AddCategoryPage

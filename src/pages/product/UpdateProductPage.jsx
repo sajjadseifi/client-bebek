@@ -5,7 +5,7 @@ import { productAPI } from '../../core/api'
 import {  useQuery } from 'react-query'
 import { toast } from 'react-toastify'
 import * as yup from 'yup'
-import { imageNullableYup, imageYup } from '../../core/helper/validation/imageValidation'
+import { imageNullableYup } from '../../core/helper/validation/imageValidation'
 
 const schema = yup.object({
   categoryId: yup.string()
@@ -75,3 +75,6 @@ export const UpdateProductPage = () => {
     </div>
   )
 }
+
+
+export default UpdateProductPage

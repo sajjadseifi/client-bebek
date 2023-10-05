@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import {Route, Routes} from 'react-router-dom'
-import { AdminRoutes } from './admin.routes'
-import { AuthRoutes } from './auth.routes'
-import { AppRoutes } from './app.routes'
-import { PrivateRoute } from './components/PrivateRoute'
-import { AnimatedRouting } from './components/AnimatedRouting'
-import { AppLayout } from '../layouts/app/AppLayout'
+import { AppLoading } from '../components/AppLoading/AppLoading';
+
+const AnimatedRouting = lazy(() => import('./components/AnimatedRouting'));
+const AppLayout = lazy(() => import('../layouts/app/AppLayout'));
+
+const PrivateRoute = lazy(() => import('./components/PrivateRoute'));
+
+const AdminRoutes = lazy(() => import('./admin.routes'));
+const AuthRoutes = lazy(() => import('./auth.routes'));
+const AppRoutes = lazy(() => import('./app.routes'));
 
 export const  Routers = () => {
 
   return (
+    <Suspense fallback={<AppLoading/>}>
     <AppLayout>
       <AnimatedRouting >
         <Routes>
@@ -21,6 +26,7 @@ export const  Routers = () => {
         </Routes>
         </AnimatedRouting>
     </AppLayout>
+    </Suspense>
   )
 }
 
