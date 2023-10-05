@@ -2,34 +2,19 @@ import React, {  useRef } from 'react'
 import { IconButton } from '../components/UI/Button/IconButton'
 import { FcDownload} from 'react-icons/fc'
 import QRCode from 'react-qr-code'
-import html2canvas from 'html2canvas'
 
 export const QrCodePage = () => {
 
    const ref = useRef()
 
-
    const saveCapture = () => {
-      html2canvas(ref.current).then(function(canvas) {
-          const  croppedCanvas = document.createElement("canvas");
-          const  croppedCanvasContext = croppedCanvas.getContext("2d");
-            const {width,height} = ref.current.getBoundingClientRect()
-
-            croppedCanvas.width = width;
-            croppedCanvas.height = height;
-            croppedCanvasContext.drawImage(canvas,0,0);
-            
-            const a = document.createElement("a");
-            a.href = croppedCanvas.toDataURL();
-            const fileName = 'bebek-coffe-qr-code.png';
-            a.download = fileName;
-            a.click();
-      }
-    );
+        const a = document.createElement("a");
+        a.href = '/assets/qr-code.png';
+        a.download = 'qr-code.png';
+        a.click();
    }
 
-   const baseUrl = window.location.origin
-   const coffeMenuLink = `${baseUrl}/menu`  
+   const coffeMenuLink = `https://coffe-bebek.iran.liara.run/menu`  
 
   return (
     <div  className='h-full' >
@@ -44,7 +29,6 @@ export const QrCodePage = () => {
                     />
                     <h1 className='my-2 text-center'>آدرس منو</h1>
                     <h1 className='uppercase text-center text-orange-100 bg-orange-600  rounded p-2  text-xs sm:text-sm md:text-lg'>
-                      {/* {coffeMenuLink} */}
                       Coffe Bebek
                     </h1>
                 </div>
