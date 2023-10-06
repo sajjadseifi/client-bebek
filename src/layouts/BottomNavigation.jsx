@@ -35,7 +35,7 @@ export const BottomNavigation = ({className,height=60,...props}) => {
       
       {...props}
       >
-      {btns.map((props,idx)=><div className='flex-1'><NavigationButton key={idx} {...props} /></div>)}
+      {btns.map((props,idx)=><div key={idx} className='flex-1'><NavigationButton key={idx} {...props} /></div>)}
     </div>
   )
 }
