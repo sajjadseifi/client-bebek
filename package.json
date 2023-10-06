@@ -14,7 +14,6 @@
     "dotenv-webpack": "^8.0.1",
     "form-data": "^4.0.0",
     "formik": "^2.4.5",
-    "fs": "^0.0.1-security",
     "html-screen-capture-js": "^2.0.5",
     "html2canvas": "^1.4.1",
     "react": "^18.2.0",
