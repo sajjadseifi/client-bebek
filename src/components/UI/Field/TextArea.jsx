@@ -9,14 +9,14 @@ export const TextArea = ({name,icon,lable='',...props}) => {
    return (
       <div>
 
-      <div className='text-lime-400 my-1'>
+      <div className='text-green-400 my-1'>
          <label htmlFor={props.id}>{lable}</label>
-         <div className="w-full  bg-lime-100 rounded mt-2" onClick={()=>ref.current?.focus()}>
+         <div className="w-full  bg-green-100 rounded mt-2" onClick={()=>ref.current?.focus()}>
             <div className="w-full min-w-[200px] flex items-center justify-between">
                <textarea 
                      ref={ref} 
                      rows={3}
-                     className='flex-1 bg-transparent py-2 p-3 outline-none outline-0 text-lime-600' 
+                     className='flex-1 bg-transparent py-2 p-3 outline-none outline-0 text-green-600' 
                      {...register(name)}
                      {...props} 
                ></textarea>

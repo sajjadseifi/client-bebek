@@ -35,7 +35,7 @@ export const Logout = () => {
 
    return (
     <div className=' text-xl space-y-4 text-center'>
-      <div className='text-lime-200'>
+      <div className='text-green-200'>
          {!!timer && <h2 className=''>{timer}</h2>}
          {!!timer 
          ? 

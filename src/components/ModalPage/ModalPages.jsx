@@ -20,7 +20,7 @@ export const ModalPages = ({}) => {
           {canBack && (
             <BiLeftArrowAlt 
                 size={25} 
-                className='text-lime-500' 
+                className='text-green-500' 
                 onClick={removeLastPage}
             />
           )}

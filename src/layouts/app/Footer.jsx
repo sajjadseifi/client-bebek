@@ -6,9 +6,9 @@ export const Footer = () => {
     <footer className='py-3' > 
         <div className="text-center text-neutral-200  dark:text-neutral-200 text-sm">
             <span>Powered By </span>
-            <Link className="text-lime-400 " href="/">Sajjad Seifi </Link>
+            <Link className="text-green-400 " href="/">Sajjad Seifi </Link>
             <span> & </span>
-            <Link className="text-lime-400 " href="/">Hossein Zare</Link>
+            <Link className="text-green-400 " href="/">Hossein Zare</Link>
       </div>
     </footer>
   )

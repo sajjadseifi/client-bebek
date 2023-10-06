@@ -12,8 +12,8 @@ export const Header = () => {
   return (
 <header className="flex flex-row-reverse justify-between items-center p-5 text-left  bg-natural-900">
       <Link to='/'>
-         <h1 className='text-lime-400 text-4xl'>{details.title1}</h1>
-         <h2 className='text-lime-500 text-xl'>{details.title2}</h2>
+         <h1 className='text-green-400 text-4xl'>{details.title1}</h1>
+         <h2 className='text-green-400 text-xl'>{details.title2}</h2>
       </Link>
       <Link to='/'>
          <img  
