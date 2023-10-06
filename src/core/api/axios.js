@@ -1,11 +1,8 @@
 import axios from "axios";
 
+const baseURL = process.env.REACT_APP_BASE_URL
 
-
-
-const axiosClient = axios.create({
-   baseURL: 'https://bebek.iran.liara.run/api/',
- });
+const axiosClient = axios.create({ baseURL });
  
  axiosClient.interceptors.request.use(
   config => {
