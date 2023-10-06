@@ -41,7 +41,7 @@ export const CategorySection = ({isLink=true,categoryId=null,onChange=(category)
       queryKey: ['categories'],
       queryFn:     categoryAPi.categoriesAllIndexApi,
     })
-   const categories = data?.categoris ?? []
+   const categories = (data?.categoris) ?? []
    const skeletonSlides = [...Array(10)].map((c)=><CategorySkeleton/>)
    const categoriesSlides = categories.map((c)=>(
       <CategoryItem 
@@ -88,15 +88,13 @@ export const CategorySection = ({isLink=true,categoryId=null,onChange=(category)
       <>
       <div className='px-4'>
          <HorizontalSwiper  breakpoints={ breakpoints} slides={slides}   />
-         <AccessAdmin>
-            {!isLoading &&  isError && categories.length === 0 (
+         <AccessAdmin show={!isLoading &&  isError && categories.length === 0}>
                <div>
-                  <h1 className='text-white'>منویی ساخته نشده</h1>
-                  <Link to='/category/add' className='flex justify-center' >
-                     <IconButton  icon={<TbCategoryFilled/>}  bgColor='bg-orange-200' textColor='text-orange-600' title='ساخت منو'/>
-                  </Link>
+                     <h1 className='text-white'>منویی ساخته نشده</h1>
+                     <Link to='/category/add' className='flex justify-center' >
+                        <IconButton  icon={<TbCategoryFilled/>}  bgColor='bg-orange-200' textColor='text-orange-600' title='ساخت منو'/>
+                     </Link>
                </div>
-            )}
          </AccessAdmin>
       </div>
       <SelectedCategory category={selectedCategory}  />

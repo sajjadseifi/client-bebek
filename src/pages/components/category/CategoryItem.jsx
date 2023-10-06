@@ -31,8 +31,7 @@ export const CategoryItem = ({id,title,description,icon,color,isLink,isActive,..
            </div>
         </CagtegoryCard>
       </div>
-      <AccessAdmin>
-          {isLink && (
+      <AccessAdmin showisLink>
             <div className=' w-full flex items-center justify-center my-3'>
                   <SettingIcons 
                       editing 
@@ -49,7 +48,6 @@ export const CategoryItem = ({id,title,description,icon,color,isLink,isActive,..
                        }}
                   />
             </div>
-          )}
       </AccessAdmin>
     </li>
   )
