@@ -10,6 +10,7 @@ body {
   background-color: #1a1b1d;
   font-family: mj,Jet;
   user-select: none;
+  background-image: url(./assets/image/bg.jpg);
 }
 
 #root {

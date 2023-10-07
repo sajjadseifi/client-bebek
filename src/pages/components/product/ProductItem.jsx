@@ -57,7 +57,7 @@ export const ProductItem = ({id,slug,title,description,thumbnail,price}) => {
          </div>
          <div className='flex flex-col px-2 flex-1 text-right'>
             <h3 className='text-xl text-green-400 text-center xs:text-right'>{title}</h3>
-            <p className='flex-1 text-xs text-gray-400 py-1'>{description}</p>
+            <p className='flex-1 text-xs text-gray-200 py-1'>{description}</p>
             <div className='text-left'>
                {!!_price && <span>{price} تومان</span>}
             </div>
