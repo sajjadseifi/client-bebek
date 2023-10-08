@@ -48,7 +48,7 @@ export const ImageFieldSqure = ({name ,lable='',...props}) => {
                          type='file'
                          id={name}
                          style={{display:'none'}}
-                         className='flex-1 bg-transparent px-3 outline-none outline-0 text-green-600 ' 
+                         className='flex-1 bg-transparent px-3 outline-none outline-0 text-green-500 ' 
                         multiple={false}
                          {...register(name,{
                             onChange:(e)=>setValue(name,e.target.files[0])

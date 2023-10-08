@@ -27,7 +27,7 @@ export const CategoryItem = ({id,title,description,icon,color,isLink,isActive,..
               <img    className='w-10 h-10 sm:w-14 sm:h-14 rounded-full' src={icon}/>
            </div>
            <div className='flex flex-col flex-1 justify-center'>
-              <span className={`text-xs sm:text-sm  pt-2 ${isActive ? 'text-green-400':''}`}>{title}</span>
+              <span className={`text-xs sm:text-sm  pt-2 ${isActive ? 'text-green-600 ':''}`}>{title}</span>
            </div>
         </CagtegoryCard>
       </div>
