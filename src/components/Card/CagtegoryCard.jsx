@@ -14,7 +14,7 @@ relative
 duration-300
 `
 export const CagtegoryCard = ({children,active}) => {
-  const activeStyle = active ? 'bg-green-300':'bg-neutral-700'
+  const activeStyle = active ? 'bg-green-200':'bg-neutral-700'
   return (
     <Card className={`${cagtegoryCardStyle}  ${activeStyle}  ${styles.CategoryCard}`}>
       {children}
