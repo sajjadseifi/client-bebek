@@ -51,7 +51,7 @@ export const Login = () => {
   return (
     <div className='w-full   mx-4'>
       <div className='text-center space-y-1 '>
-         <h1 className='text-white text-4xl'> ورود به کافه</h1>
+         <h1 className='text-black text-4xl'> ورود به کافه</h1>
       </div>
       <div className='my-2'></div>
       <FormProvider {...methods}>
@@ -61,12 +61,15 @@ export const Login = () => {
                 lable='نام کاربری'  
                 icon={<BiSolidUser/>}   
                 name='username'
+                placeHolder='لطفا نام کاربری خود را وارد کنید.'
             />
           <TextField 
               type="password" 
               lable='گذرواژه'  
               icon={<FaKey/>}   
               name='password'
+              placeHolder='لطفا گذرواژه  خود را وارد کنید.'
+
           />
           <ButtonLoader  disabled={isLoading}  title='ورود' loading={isLoading}/>
         </form>

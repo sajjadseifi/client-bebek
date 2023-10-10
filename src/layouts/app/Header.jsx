@@ -11,9 +11,9 @@ const details = {
 export const Header = () => {
   return (
 <header className="flex flex-row-reverse justify-between items-center p-5 text-left  bg-natural-900">
-      <Link to='/'>
-         <h1 className='text-green-800 text-4xl'>{details.title1}</h1>
-         <h2 className='text-green-800 text-xl'>{details.title2}</h2>
+      <Link to='/' className='bg-green-50 px-2 rounded'>
+         <h1 className='text-green-600 text-4xl'>{details.title1}</h1>
+         <h2 className='text-green-600 text-xl'>{details.title2}</h2>
       </Link>
       <Link to='/'>
          <img  
